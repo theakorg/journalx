@@ -1,0 +1,389 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f0f0f" />
+  <meta name="color-scheme" content="dark" />
+  <title>JournalX</title>
+  <link rel="shortcut icon" type="image/x-icon" href="assets/logos/logo.svg">
+  <link rel="manifest" href="manifest.json" />
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="app" id="app">
+    <header class="topbar">
+      <div class="app-title">
+        <div class="win-controls"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+        <span data-i18n="meta.appTitle">JournalX</span>
+      </div>
+    </header>
+
+    <aside class="sidebar">
+      <nav class="nav">
+        <button class="view-toggle active" data-view="journal" data-i18n="nav.journal">Journal</button>
+        <button class="view-toggle" data-view="stats" data-i18n="nav.stats">Insights</button>
+        <button class="view-toggle" data-view="settings" data-i18n="nav.settings">Settings</button>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <section class="container fade-wrap" id="view-journal">
+        <details class="accordion" id="formAccordion">
+          <summary>
+            <span id="formTitle" data-i18n="form.title">Trade Entry Form</span>
+            <span class="caret">&#9662;</span>
+          </summary>
+          <div class="accordion-body">
+            <form id="tradeForm" novalidate>
+              <div class="grid">
+                <div class="field span-2">
+                  <label for="symbol" data-i18n="form.fields.symbol.label">Symbol</label>
+                  <input id="symbol" placeholder="e.g. BTC/USDT" data-i18n-placeholder="form.fields.symbol.placeholder" required />
+                </div>
+                <div class="field span-2">
+                  <label for="exchange" data-i18n="form.fields.exchange.label">Exchange</label>
+                  <input id="exchange" list="exchanges" placeholder="e.g. Binance / Bybit" data-i18n-placeholder="form.fields.exchange.placeholder" />
+                </div>
+                <div class="field span-2">
+                  <label for="marketType" data-i18n="form.fields.marketType.label">Market Type</label>
+                  <select id="marketType" required>
+                    <option value="Spot" data-i18n="form.fields.marketType.options.spot">Spot</option>
+                    <option value="Futures" data-i18n="form.fields.marketType.options.futures">Futures</option>
+                  </select>
+                </div>
+                <div class="field span-2 only-futures">
+                  <label for="side" data-i18n="form.fields.side.label">Side</label>
+                  <select id="side">
+                    <option value="Long" data-i18n="form.fields.side.options.long">Long</option>
+                    <option value="Short" data-i18n="form.fields.side.options.short">Short</option>
+                  </select>
+                </div>
+                <div class="field span-2">
+                  <label for="timeframe" data-i18n="form.fields.timeframe.label">Time Frame</label>
+                  <input id="timeframe" placeholder="e.g. 15m / 1h / 4h" data-i18n-placeholder="form.fields.timeframe.placeholder" />
+                </div>
+                <div class="field span-2">
+                  <label for="orderType" data-i18n="form.fields.orderType.label">Order Type</label>
+                  <select id="orderType">
+                    <option value="Limit" data-i18n="form.fields.orderType.options.limit">Limit</option>
+                    <option value="Market" data-i18n="form.fields.orderType.options.market">Market</option>
+                    <option value="Stop" data-i18n="form.fields.orderType.options.stop">Stop</option>
+                  </select>
+                </div>
+                <div class="field span-2">
+                  <label for="volume" data-i18n="form.fields.volume.label">Size (Qty)</label>
+                  <input id="volume" step="0.000001" inputmode="decimal" placeholder="e.g. 0.02" data-i18n-placeholder="form.fields.volume.placeholder" />
+                </div>
+                <div class="field span-2">
+                  <label for="entry" data-i18n="form.fields.entry.label">Entry Price</label>
+                  <input id="entry" step="0.0001" inputmode="decimal" placeholder="e.g. 60000" data-i18n-placeholder="form.fields.entry.placeholder" required />
+                </div>
+                <div class="field span-2">
+                  <label for="entryDate" data-i18n="form.fields.entryDate.label">Entry Date</label>
+                  <input id="entryDate" name="entryDate" maxlength="10" minlength="10" placeholder="YYYY-MM-DD" data-i18n-placeholder="form.fields.entryDate.placeholder" />
+                </div>
+                <div class="field span-2">
+                  <label for="entryTime" data-i18n="form.fields.entryTime.label">Entry Time</label>
+                  <input id="entryTime" name="entryTime" placeholder="HH:MM" data-i18n-placeholder="form.fields.entryTime.placeholder" />
+                </div>
+                <div class="field span-2">
+                  <label for="close" data-i18n="form.fields.close.label">Exit Price</label>
+                  <input id="close" step="0.0001" inputmode="decimal" placeholder="e.g. 61200" data-i18n-placeholder="form.fields.close.placeholder" required />
+                </div>
+                <div class="field span-2">
+                  <label for="exitDate" data-i18n="form.fields.exitDate.label">Exit Date</label>
+                  <input id="exitDate" name="exitDate" maxlength="10" minlength="10" placeholder="YYYY-MM-DD" data-i18n-placeholder="form.fields.exitDate.placeholder" />
+                </div>
+                <div class="field span-2">
+                  <label for="exitTime" data-i18n="form.fields.exitTime.label">Exit Time</label>
+                  <input id="exitTime" name="exitTime" placeholder="HH:MM" data-i18n-placeholder="form.fields.exitTime.placeholder" />
+                </div>
+                <div class="field span-2">
+                  <label for="sl" data-i18n="form.fields.sl.label">Stop Loss (SL)</label>
+                  <input id="sl" step="0.0001" inputmode="decimal" placeholder="Stop Loss" data-i18n-placeholder="form.fields.sl.placeholder" />
+                </div>
+                <div class="field span-2">
+                  <label for="tp" data-i18n="form.fields.tp.label">Take Profit (TP)</label>
+                  <input id="tp" step="0.0001" inputmode="decimal" placeholder="Take Profit" data-i18n-placeholder="form.fields.tp.placeholder" />
+                </div>
+                <div class="field span-6 only-futures">
+                  <label for="leverage" data-i18n="form.fields.leverage.label">Leverage</label>
+                  <input id="leverage" step="1" inputmode="decimal" min="1" placeholder="e.g. 10" data-i18n-placeholder="form.fields.leverage.placeholder" />
+                </div>
+                <div class="field span-4" style="grid-column: span 8;">
+                  <label for="fee" data-i18n="form.fields.fee.label">Trading Fee (USDT)</label>
+                  <input id="fee" step="0.0001" inputmode="decimal" placeholder="e.g. 2.5" data-i18n-placeholder="form.fields.fee.placeholder" />
+                </div>
+                <div class="field span-4">
+                  <label for="strategy" data-i18n="form.fields.strategy.label">Strategy</label>
+                  <input id="strategy" placeholder="Strategy or setup name" data-i18n-placeholder="form.fields.strategy.placeholder" />
+                </div>
+                <div class="field span-4">
+                  <label for="emotion" data-i18n="form.fields.emotion.label">Emotion</label>
+                  <input id="emotion" placeholder="Mood while trading" data-i18n-placeholder="form.fields.emotion.placeholder" />
+                </div>
+                <div class="field span-4">
+                  <label for="notes" data-i18n="form.fields.notes.label">Notes</label>
+                  <input id="notes" placeholder="Short comment about the trade" data-i18n-placeholder="form.fields.notes.placeholder" />
+                </div>
+              </div>
+              <div class="actions">
+                <button class="btn primary" id="submitBtn" type="submit" data-i18n="form.actions.submit">Save Trade</button>
+                <button class="btn ghost" type="button" id="cancelEdit" data-i18n="form.actions.cancel">Cancel Edit</button>
+              </div>
+            </form>
+          </div>
+        </details>
+
+        <div class="filters-row">
+          <div class="filters-row__group">
+            <div class="input-select">
+              <select id="filterMarket">
+              <option value="all" data-i18n="filters.market.options.all">Market: All</option>
+            </select>
+            </div>
+            <div class="input-select">
+              <select id="filterExchange">
+              <option value="all" data-i18n="filters.exchange.options.all">Exchange: All</option>
+            </select>
+            </div>
+          <button class="btn ghost" id="addDemo" data-i18n="actions.addSamples">Add Samples</button>
+          <label class="btn" for="importExcelFile">
+            <span data-i18n="actions.importExcel">Import Excel</span>
+            <input id="importExcelFile" type="file" accept=".xlsx,.xls" hidden>
+          </label>
+          <button class="btn" id="exportXlsx" data-i18n="actions.exportExcel">Export Excel (.xlsx)</button>
+          <button class="btn warn" id="clearAll" data-i18n="actions.clearAll">Clear All</button>
+          </div>
+          <input id="filterSearch" class="filters-search" placeholder="Search symbol or exchange..." data-i18n-placeholder="filters.search.placeholder" />
+        </div>
+
+
+
+        <div class="panel">
+          <div class="table-wrap">
+            <table id="tradesTable">
+              <thead>
+                <tr>
+                  <th data-i18n="table.headers.index">#</th>
+                  <th data-i18n="table.headers.symbol">Symbol</th>
+                  <th data-i18n="table.headers.exchange">Exchange</th>
+                  <th data-i18n="table.headers.market">Market</th>
+                  <th data-i18n="table.headers.side">Side</th>
+                  <th data-i18n="table.headers.entry">Entry Price</th>
+                  <th data-i18n="table.headers.entryDate">Entry Date</th>
+                  <th data-i18n="table.headers.entryTime">Entry Time</th>
+                  <th data-i18n="table.headers.close">Exit Price</th>
+                  <th data-i18n="table.headers.exitDate">Exit Date</th>
+              <th data-i18n="table.headers.exitTime">Exit Time</th>
+              <th data-i18n="table.headers.slTp">SL / TP</th>
+              <th data-i18n="table.headers.leverage">Lev</th>
+              <th data-i18n="table.headers.volume">Size</th>
+              <th data-i18n="table.headers.fee">Fee</th>
+              <th data-i18n="table.headers.pnl" data-column="pnl">PNL</th>
+              <th data-i18n="table.headers.timeframe">TF</th>
+              <th data-i18n="table.headers.details">Details</th>
+              <th data-i18n="table.headers.actions">Actions</th>
+            </tr>
+          </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div class="pagination">
+            <div class="pagination-info" id="paginationInfo" data-i18n="pagination.info">Page 0 of 0</div>
+            <div class="pagination-controls">
+              <button class="btn ghost" id="prevPage" type="button" data-i18n="pagination.prev">Previous</button>
+              <button class="btn ghost" id="nextPage" type="button" data-i18n="pagination.next">Next</button>
+              <label class="page-size" for="pageSize">
+                <span data-i18n="pagination.label">Show</span>
+                <select id="pageSize">
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                </select>
+                <span data-i18n="pagination.suffix">per page</span>
+              </label>
+            </div>
+          </div>
+          <div class="footer" data-i18n="footer.note">Data stays in your browser (localStorage). Use the export tools to back up your journal.</div>
+        </div>
+      </section>
+
+      <section class="container fade-wrap" id="view-stats" hidden>
+        <div class="panel">
+          <h2 data-i18n="insights.summary.title">Performance Snapshot</h2>
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-label" data-i18n="metrics.totalTrades.label">Total Trades</span>
+              <span class="metric-value" id="insightTotalTrades">0</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label" data-i18n="insights.summary.wins">Winning Trades</span>
+              <span class="metric-value" id="insightWins">0</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label" data-i18n="insights.summary.losses">Losing Trades</span>
+              <span class="metric-value" id="insightLosses">0</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label" data-i18n="metrics.winRate.label">Win Rate</span>
+              <span class="metric-value" id="insightWinRate">0%</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label" data-i18n="metrics.netPnl.label">Net PNL</span>
+              <span class="metric-value" id="insightNetPnl">0</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label" data-i18n="insights.summary.avgNet">Avg PNL / Trade</span>
+              <span class="metric-value" id="insightAvgNet">0</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label" data-i18n="insights.summary.avgPct">Avg PNL %</span>
+              <span class="metric-value" id="insightAvgPct">0%</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label" data-i18n="insights.summary.bestTrade">Best Trade</span>
+              <span class="metric-value" id="insightBestTrade">0</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label" data-i18n="insights.summary.worstTrade">Worst Trade</span>
+              <span class="metric-value" id="insightWorstTrade">0</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label" data-i18n="insights.summary.profitFactor">Profit Factor</span>
+              <span class="metric-value" id="insightProfitFactor">0</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label" data-i18n="insights.summary.avgHold">Avg Hold (hrs)</span>
+              <span class="metric-value" id="insightAvgHold">0</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-label" data-i18n="insights.summary.totalVolume">Total Volume</span>
+              <span class="metric-value" id="insightTotalVolume">0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="insights.breakdown.title">Breakdowns</h2>
+          <h3 data-i18n="insights.breakdown.market">By Market</h3>
+          <div class="metrics-grid" id="insightMarketGrid"></div>
+          <h3 data-i18n="insights.breakdown.side">By Side</h3>
+          <div class="metrics-grid" id="insightSideGrid"></div>
+          <h3 data-i18n="insights.breakdown.exchange">Top Exchanges</h3>
+          <div class="metrics-grid" id="insightExchangeGrid"></div>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="insights.overTime.title">PNL Over Time</h2>
+          <div class="chart-wrapper">
+            <canvas id="insightsPnlChart"></canvas>
+          </div>
+          <p class="metric-label" id="insightsChartEmpty" data-i18n="insights.overTime.empty" hidden>Not enough data yet.</p>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="insights.monthly.title">Monthly Performance</h2>
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="insights.monthly.headers.period">Period</th>
+                <th data-i18n="insights.monthly.headers.trades">Trades</th>
+                <th data-i18n="insights.monthly.headers.net">Net PNL</th>
+                <th data-i18n="insights.monthly.headers.winRate">Win Rate</th>
+              </tr>
+            </thead>
+            <tbody id="insightMonthlyBody">
+              <tr>
+                <td colspan="4" data-i18n="insights.common.noData">No data yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="container fade-wrap" id="view-settings" hidden>
+        <div class="panel">
+          <p data-i18n="placeholders.settings">Settings</p>
+
+<hr>
+
+      <div class="top-actions">
+          <span class="lang-select__label" data-i18n="language.label">Language</span>
+          <select id="languageSelect" class="ltr-only">
+            <option value="en" data-i18n="language.options.en">English</option>
+            <option value="fa" data-i18n="language.options.fa">Farsi</option>
+          </select>
+          <span class="lang-select__label" data-i18n="settings.pnlDisplay.label">PNL Display</span>
+          <select id="pnlDisplaySelect" class="ltr-only">
+            <option value="net" data-i18n="settings.pnlDisplay.options.net">USDT</option>
+            <option value="pct" data-i18n="settings.pnlDisplay.options.pct">Percent</option>
+          </select>
+          <span class="lang-select__label" data-i18n="settings.digits.label">Digit Style</span>
+          <select id="digitsModeSelect" class="ltr-only">
+            <option value="en" data-i18n="settings.digits.options.en">English digits</option>
+            <option value="fa" data-i18n="settings.digits.options.fa">Persian digits</option>
+          </select>
+        </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav__item view-toggle active" data-view="journal">
+        <span class="mobile-nav__label" data-i18n="nav.journal">Journal</span>
+      </button>
+      <button class="mobile-nav__item view-toggle" data-view="stats">
+        <span class="mobile-nav__label" data-i18n="nav.stats">Insights</span>
+      </button>
+      <button class="mobile-nav__item view-toggle" data-view="settings">
+        <span class="mobile-nav__label" data-i18n="nav.settings">Settings</span>
+      </button>
+    </nav>
+
+    <footer class="statusbar" id="status">
+      <span id="status-msg" data-i18n="status.ready">Ready</span>
+    </footer>
+  </div>
+<div class="modal" id="detailsModal" hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" id="modalClose" aria-label="Close">&times;</button>
+      <h3 class="modal__title" id="modalTitle" data-i18n="modals.detailsTitle">Trade Details</h3>
+      <div class="modal__body">
+        <div class="detail-row" id="modalStrategyRow" hidden>
+          <span class="detail-label" data-i18n="modals.strategy">Strategy</span>
+          <p class="detail-value" id="modalStrategy"></p>
+        </div>
+        <div class="detail-row" id="modalEmotionRow" hidden>
+          <span class="detail-label" data-i18n="modals.emotion">Emotion</span>
+          <p class="detail-value" id="modalEmotion"></p>
+        </div>
+        <div class="detail-row" id="modalNotesRow" hidden>
+          <span class="detail-label" data-i18n="modals.notes">Notes</span>
+          <p class="detail-value" id="modalNotes"></p>
+        </div>
+        <div class="modal__empty" id="modalEmpty" data-i18n="modals.empty">No additional notes for this trade.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+<dialog id="confirmDeleteDialog" class="modal-confirm">
+  <form method="dialog" class="modal-confirm__content">
+    <h3 class="modal-confirm__title">حذف معامله؟</h3>
+    <p class="modal-confirm__text">این کار برگشت‌پذیر نیست. مطمئنی؟</p>
+    <div class="modal-confirm__actions">
+      <button value="cancel" class="btn btn--ghost">انصراف</button>
+      <button value="ok" class="btn btn--danger" autofocus>حذف</button>
+    </div>
+  </form>
+</dialog>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "JournalX",
+  "short_name": "JournalX",
+  "description": "Trading Journal For Tracking Spot And Futures Performance, Insights, And Stats",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0f0f0f",
+  "theme_color": "#0f0f0f",
+  "lang": "en",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "assets/logos/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

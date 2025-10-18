@@ -1,0 +1,310 @@
+{
+  "meta": {
+    "languageName": "English",
+    "languageNativeName": "English",
+    "title": "JournalX",
+    "appTitle": "JournalX",
+    "direction": "ltr",
+    "numberLocale": "en-US"
+  },
+  "theme": {
+    "dark": "Dark Mode",
+    "light": "Light Mode"
+  },
+  "language": {
+    "label": "Language",
+    "options": {
+      "en": "English",
+      "fa": "Persian"
+    }
+  },
+  "nav": {
+    "journal": "Journal",
+    "stats": "Insights",
+    "settings": "Settings"
+  },
+  "form": {
+    "title": "Trade Entry Form",
+    "fields": {
+      "symbol": {
+        "label": "Symbol",
+        "placeholder": "e.g. BTC/USDT"
+      },
+      "exchange": {
+        "label": "Exchange",
+        "placeholder": "e.g. Binance / Bybit"
+      },
+      "marketType": {
+        "label": "Market Type",
+        "options": {
+          "spot": "Spot",
+          "futures": "Futures"
+        }
+      },
+      "side": {
+        "label": "Side",
+        "options": {
+          "long": "Long",
+          "short": "Short"
+        }
+      },
+      "timeframe": {
+        "label": "Time Frame",
+        "placeholder": "e.g. 15m / 1h / 4h"
+      },
+      "orderType": {
+        "label": "Order Type",
+        "options": {
+          "limit": "Limit",
+          "market": "Market",
+          "stop": "Stop"
+        }
+      },
+      "volume": {
+        "label": "Size (Qty)",
+        "placeholder": "e.g. 0.02"
+      },
+      "entry": {
+        "label": "Entry Price",
+        "placeholder": "e.g. 60000"
+      },
+      "close": {
+        "label": "Exit Price",
+        "placeholder": "e.g. 61200"
+      },
+      "entryDate": {
+        "label": "Entry Date",
+        "placeholder": "YYYY-MM-DD"
+      },
+      "entryTime": {
+        "label": "Entry Time",
+        "placeholder": "HH:MM"
+      },
+      "exitDate": {
+        "label": "Exit Date",
+        "placeholder": "YYYY-MM-DD"
+      },
+      "exitTime": {
+        "label": "Exit Time",
+        "placeholder": "HH:MM"
+      },
+      "sl": {
+        "label": "Stop Loss (SL)",
+        "placeholder": "Stop Loss"
+      },
+      "tp": {
+        "label": "Take Profit (TP)",
+        "placeholder": "Take Profit"
+      },
+      "leverage": {
+        "label": "Leverage",
+        "placeholder": "e.g. 10"
+      },
+      "fee": {
+        "label": "Trading Fee (USDT)",
+        "placeholder": "e.g. 2.5"
+      },
+      "strategy": {
+        "label": "Strategy",
+        "placeholder": "Strategy or setup name"
+      },
+      "emotion": {
+        "label": "Emotion",
+        "placeholder": "Mood while trading"
+      },
+      "notes": {
+        "label": "Notes",
+        "placeholder": "Short comment about the trade"
+      }
+    },
+    "actions": {
+      "submit": "Save Trade",
+      "update": "Update Trade",
+      "reset": "Clear Form",
+      "cancel": "Cancel Edit"
+    }
+  },
+  "filters": {
+    "market": {
+      "label": "Market: All",
+      "options": {
+        "all": "Market: All",
+        "spot": "Spot",
+        "futures": "Futures"
+      }
+    },
+    "exchange": {
+      "label": "Exchange: All",
+      "options": {
+        "all": "Exchange: All"
+      }
+    },
+    "search": {
+      "placeholder": "Search ..."
+    }
+  },
+  "metrics": {
+    "totalTrades": {
+      "label": "Total Trades"
+    },
+    "winRate": {
+      "label": "Win Rate"
+    },
+    "netPnl": {
+      "label": "Net PNL"
+    }
+  },
+  "actions": {
+    "addSamples": "Add Samples Trades",
+    "importExcel": "Import Data",
+    "exportExcel": "Export Data",
+    "clearAll": "Clear All"
+  },
+  "table": {
+    "headers": {
+      "index": "#",
+      "symbol": "Symbol",
+      "exchange": "Exchange",
+      "market": "Market",
+      "side": "Side",
+      "entry": "Entry Price",
+      "entryDate": "Entry Date",
+      "entryTime": "Entry Time",
+      "close": "Exit Price",
+      "exitDate": "Exit Date",
+      "exitTime": "Exit Time",
+      "slTp": "SL / TP",
+      "leverage": "Lev",
+      "volume": "Size",
+      "fee": "Fee",
+      "pnl": "PNL (USDT)",
+      "pnlPct": "PNL %",
+      "timeframe": "TF",
+      "strategy": "Strategy",
+      "emotion": "Emotion",
+      "notes": "Notes",
+      "actions": "Actions",
+      "details": "Details"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete"
+    }
+  },
+  "pagination": {
+    "info": "Page {current} of {total}",
+    "prev": "Previous",
+    "next": "Next",
+    "label": "Show",
+    "suffix": "per page"
+  },
+  "footer": {
+    "note": ""
+  },
+  "settings": {
+    "pnlDisplay": {
+      "label": "PNL Display",
+      "options": {
+        "net": "USDT",
+        "pct": "Percent"
+      }
+    },
+    "digits": {
+      "label": "Digit Style",
+      "options": {
+        "en": "English Digits",
+        "fa": "Persian Digits"
+      }
+    }
+  },
+  "insights": {
+    "summary": {
+      "title": "Performance Snapshot",
+      "wins": "Winning Trades",
+      "losses": "Losing Trades",
+      "avgNet": "Avg PNL / Trade",
+      "avgPct": "Avg PNL",
+      "bestTrade": "Best Trade",
+      "worstTrade": "Worst Trade",
+      "profitFactor": "Profit Factor",
+      "avgHold": "Avg Hold",
+      "totalVolume": "Total Volume"
+    },
+    "breakdown": {
+      "title": "Breakdowns",
+      "market": "By Market",
+      "side": "By Side",
+      "exchange": "Top Exchanges"
+    },
+    "overTime": {
+      "title": "PNL Over Time",
+      "empty": "Add more trades to see the trend."
+    },
+    "monthly": {
+      "title": "Monthly Performance",
+      "headers": {
+        "period": "Period",
+        "trades": "Trades",
+        "net": "Net PNL",
+        "winRate": "Win Rate"
+      }
+    },
+    "common": {
+      "noData": "You Didn’t Record Anything, So… I’ve Got Nothing To Say Either ...",
+      "trades": "Trades",
+      "net": "Net",
+      "winRate": "Win Rate",
+      "avgPnl": "Avg PNL",
+      "unknown": "Unknown"
+    }
+  },
+  "placeholders": {
+    "stats": "Insights are coming soon",
+    "settings": "Settings"
+  },
+  "status": {
+    "ready": "Ready",
+    "tradeSaved": "Trade saved successfully",
+    "tradeUpdated": "Trade updated",
+    "tradeDeleted": "Trade removed",
+    "demoAdded": "Sample trades added",
+    "formCleared": "Form cleared",
+    "editCanceled": "Edit canceled",
+    "xlsxExported": "Excel export downloaded",
+    "excelImported": "Excel file loaded",
+    "allCleared": "All trades cleared"
+  },
+  "confirm": {
+    "clearAll": "Are you sure you want to remove all saved trades?"
+  },
+  "errors": {
+    "dateLength": "Dates must be exactly 10 characters."
+  },
+  "demo": {
+    "trades": [
+      {
+        "strategy": "Trend follower",
+        "emotion": "Calm",
+        "notes": "Sample trade following an uptrend breakout"
+      },
+      {
+        "strategy": "EMA200 rejection",
+        "emotion": "Alert",
+        "notes": "Use to test moving-average rejection setups"
+      },
+      {
+        "strategy": "Fake breakout",
+        "emotion": "Rush",
+        "notes": "Note for testing false breakout reactions"
+      }
+    ]
+  },
+  "modals": {
+    "detailsTitle": "Trade Details",
+    "strategy": "Strategy",
+    "emotion": "Emotion",
+    "notes": "Notes",
+    "empty": "No additional notes for this trade.",
+    "openLabel": "View trade notes"
+  }
+}

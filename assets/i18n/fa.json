@@ -1,0 +1,315 @@
+﻿{
+  "meta": {
+    "languageName": "Persian",
+    "languageNativeName": "فارسی",
+    "title": "ژورنال ایکس",
+    "appTitle": "ژورنال ایکس",
+    "direction": "rtl",
+    "numberLocale": "fa-IR"
+  },
+  "theme": {
+    "dark": "حالت تیره",
+    "light": "حالت روشن"
+  },
+  "language": {
+    "label": "زبان",
+    "options": {
+      "en": "English",
+      "fa": "فارسی"
+    },
+    "digits": {
+      "label": "ساختار اعداد",
+      "options": {
+        "en": "اعداد انگلیسی",
+        "fa": "اعداد فارسی"
+      }
+    }
+  },
+  "nav": {
+    "journal": "ژورنال",
+    "stats": "اینسایت",
+    "settings": "تنظیمات"
+  },
+  "form": {
+    "title": "فرم معاملات",
+    "fields": {
+      "symbol": {
+        "label": "نماد",
+        "placeholder": "BTC/USDT"
+      },
+      "exchange": {
+        "label": "صرافی",
+        "placeholder": "Binance"
+      },
+      "marketType": {
+        "label": "نوع بازار",
+        "options": {
+          "spot": "اسپات",
+          "futures": "فیوچرز"
+        }
+      },
+      "side": {
+        "label": "سمت معامله",
+        "options": {
+          "long": "لانگ",
+          "short": "شورت"
+        }
+      },
+      "timeframe": {
+        "label": "بازه زمانی",
+        "placeholder": "15m / 1h / 4h"
+      },
+      "orderType": {
+        "label": "نوع سفارش",
+        "options": {
+          "limit": "لیمیت",
+          "market": "مارکت",
+          "stop": "استاپ"
+        }
+      },
+      "volume": {
+        "label": "حجم",
+        "placeholder": "0.02"
+      },
+      "entry": {
+        "label": "قیمت ورود",
+        "placeholder": "60000"
+      },
+      "entryDate": {
+        "label": "تاریخ ورود",
+        "placeholder": "YYYY/MM/DD"
+      },
+      "entryTime": {
+        "label": "زمان ورود",
+        "placeholder": "HH:MM:SS"
+      },
+      "close": {
+        "label": "قیمت خروج",
+        "placeholder": "61200"
+      },
+      "exitDate": {
+        "label": "تاریخ خروج",
+        "placeholder": "YYYY/MM/DD"
+      },
+      "exitTime": {
+        "label": "زمان خروج",
+        "placeholder": "HH:MM:SS"
+      },
+      "sl": {
+        "label": "حد ضرر (SL)",
+        "placeholder": "حد ضرر"
+      },
+      "tp": {
+        "label": "حد سود (TP)",
+        "placeholder": "حد سود"
+      },
+      "leverage": {
+        "label": "اهرم",
+        "placeholder": "10x"
+      },
+      "fee": {
+        "label": "کارمزد",
+        "placeholder": "2.5"
+      },
+      "strategy": {
+        "label": "استراتژی",
+        "placeholder": "اچ ال اس"
+      },
+      "emotion": {
+        "label": "احساس",
+        "placeholder": "حال و احساس هنگام معامله"
+      },
+      "notes": {
+        "label": "یادداشت",
+        "placeholder": "یادداشت کوتاه درباره معامله"
+      }
+    },
+    "actions": {
+      "submit": "ثبت معامله",
+      "update": "ویرایش معامله",
+      "reset": "پاک کردن فرم",
+      "cancel": "لغو تغییرات"
+    }
+  },
+  "filters": {
+    "market": {
+      "label": "بازار: همه",
+      "options": {
+        "all": "بازار: همه",
+        "spot": "اسپات",
+        "futures": "فیوچرز"
+      }
+    },
+    "exchange": {
+      "label": "صرافی: همه",
+      "options": {
+        "all": "صرافی: همه"
+      }
+    },
+    "search": {
+      "placeholder": "جستجو ..."
+    }
+  },
+  "metrics": {
+    "totalTrades": {
+      "label": "تعداد معاملات"
+    },
+    "winRate": {
+      "label": "وین ریت"
+    },
+    "netPnl": {
+      "label": "پی ان ال خالص"
+    }
+  },
+  "actions": {
+    "addSamples": "افزودن معاملات نمونه",
+    "importExcel": "تزریق اطلاعات",
+    "exportExcel": "دریافت اطلاعات",
+    "clearAll": "حذف همه"
+  },
+  "table": {
+    "headers": {
+      "index": "#",
+      "symbol": "نماد",
+      "exchange": "صرافی",
+      "market": "بازار",
+      "side": "سمت",
+      "entry": "قیمت ورود",
+      "entryDate": "تاریخ ورود",
+      "entryTime": "زمان ورود",
+      "close": "قیمت خروج",
+      "exitDate": "تاریخ خروج",
+      "exitTime": "زمان خروج",
+      "slTp": "حد ضرر / سود",
+      "leverage": "اهرم",
+      "volume": "حجم",
+      "fee": "کارمزد",
+      "pnl": "PNL",
+      "pnlPct": "PNL %",
+      "timeframe": "بازه",
+      "strategy": "استراتژی",
+      "emotion": "احساس",
+      "notes": "یادداشت",
+      "actions": "عملیات",
+      "details": "جزئیات"
+    },
+    "actions": {
+      "edit": "ویرایش",
+      "delete": "حذف"
+    }
+  },
+  "pagination": {
+    "info": "صفحه {current} از {total}",
+    "prev": "قبلی",
+    "next": "بعدی",
+    "label": "نمایش",
+    "suffix": "مورد در هر صفحه"
+  },
+  "footer": {
+    "note": ""
+  },
+  "settings": {
+    "pnlDisplay": {
+      "label": "نمایش پی ان ال",
+      "options": {
+        "net": "دلار",
+        "pct": "درصد"
+      }
+    },
+    "digits": {
+      "label": "ساختار اعداد",
+      "options": {
+        "en": "اعداد انگلیسی",
+        "fa": "اعداد فارسی"
+      }
+    }
+  },
+  "insights": {
+    "summary": {
+      "title": "خلاصه عملکرد",
+      "wins": "معاملات سودده",
+      "losses": "معاملات ضررده",
+      "avgNet": "میانگین سود هر معامله",
+      "avgPct": "میانگین درصد سود",
+      "bestTrade": "بهترین سود در یک معامله",
+      "worstTrade": "بدترین ضرر در یک معامله",
+      "profitFactor": "نسبت سود به ضرر",
+      "avgHold": "میانگین زمان هولد",
+      "totalVolume": "حجم کل معاملات"
+    },
+    "breakdown": {
+      "title": "تفکیک ها",
+      "market": "بر اساس بازار",
+      "side": "بر اساس جهت معامله",
+      "exchange": "بر اساس صرافی ها"
+    },
+    "overTime": {
+      "title": "پی ان ال در گذر زمان",
+      "empty": "برای گفتن و دیدن گذر زمانت باید منو همراه خودت کنی از اینجا به بعد چون الان چیزی ازت نمیدونم که ..."
+    },
+    "monthly": {
+      "title": "عملکرد ماهانه",
+      "headers": {
+        "period": "دوره",
+        "trades": "تعداد معاملات",
+        "net": "پی ان ال خالص",
+        "winRate": "وین ریت"
+      }
+    },
+    "common": {
+      "noData": "چیزی ثبت نکردی و منم چیزی ندارم که بگم خب ...",
+      "trades": "معاملات",
+      "net": "خالص",
+      "winRate": "وین ریت",
+      "avgPnl": "میانگین پی ان ال",
+      "unknown": "نامشخص"
+    }
+  },  "placeholders": {
+    "stats": "بخش اینسایت بزودی اضافه میشه ...",
+    "settings": "تنظیمات"
+  },
+  "status": {
+    "ready": "آماده",
+    "tradeSaved": "معامله ثبت شد",
+    "tradeUpdated": "معامله به‌روزرسانی شد",
+    "tradeDeleted": "معامله حذف شد",
+    "demoAdded": "سه معامله نمونه اضافه شد",
+    "formCleared": "فرم پاک شد",
+    "editCanceled": "ویرایش لغو شد",
+    "xlsxExported": "خروجی اکسل دانلود شد",
+    "excelImported": "فایل اکسل بارگذاری شد",
+    "allCleared": "تمام معاملات حذف شد"
+  },
+  "confirm": {
+    "clearAll": "آیا از حذف همه معاملات مطمئن هستید؟"
+  },
+  "errors": {
+    "dateLength": "تاریخ باید دقیقاً ۱۰ کاراکتر باشد"
+  },
+  "demo": {
+"trades": [
+  {
+    "strategy": "Breakout - شکست سطوح",
+    "emotion": "هیجان‌زده",
+    "notes": "ورود بعد از شکست مقاومت کلیدی و تأیید حجم"
+  },
+  {
+    "strategy": "Pullback - برگشت به حمایت",
+    "emotion": "خسته",
+    "notes": "ورود بعد از ریتست سطح شکسته شده"
+  },
+  {
+    "strategy": "EMA Crossover - تقاطع میانگین‌ها",
+    "emotion": "مطمئن",
+    "notes": "خرید وقتی EMA50 از EMA200 عبور می‌کند"
+  }
+]  },
+  "modals": {
+    "detailsTitle": "جزئیات معامله",
+    "strategy": "استراتژی",
+    "emotion": "احساس",
+    "notes": "یادداشت",
+    "empty": "اطلاعات تکمیلی برای این معامله ثبت نشده است.",
+    "openLabel": "نمایش جزئیات معامله"
+  }
+}
