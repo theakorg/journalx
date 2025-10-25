@@ -190,23 +190,53 @@ const headerAliases = {
   exchange: ['Exchange', '?????', 'Exchange Name', 'ExchangeName', 'Exchange_Name'],
   marketType: ['Market', '?????'],
   side: ['Side', '???'],
-  timeframe: ['TF', '????', 'Timeframe'],
-  orderType: ['Order', '??? ?????'],
-  volume: ['Vol', '???', 'Volume'],
-  entry: ['Entry', 'Entry Price', '???? ????'],
-  entryDate: ['Entry Date', '????? ????'],
-  entryTime: ['Entry Time', '???? ????'],
-  exitDate: ['Exit Date', '????? ????'],
-  exitTime: ['Exit Time', '???? ????'],
-  close: ['Close', 'Close Price', '???? ????'],
-  sl: ['SL', 'Stop Loss', '?? ???'],
-  tp: ['TP', 'Take Profit', '?? ???'],
+  timeframe: ['TF', '????', 'Timeframe', 'Time Frame'],
+  orderType: ['Order', '??? ?????', 'Order Type'],
+  volume: ['Vol', '???', 'Volume', 'Size', 'Size (Qty)', 'Qty', 'Quantity', 'Order Size', 'Position Size'],
+  entry: ['Entry', 'Entry Price', '???? ????', 'Open', 'Open Price'],
+  entryDate: ['Entry Date', '????? ????', 'Open Date'],
+  entryTime: ['Entry Time', '???? ????', 'Open Time'],
+  exitDate: ['Exit Date', '????? ????', 'Close Date', 'Exit'],
+  exitTime: ['Exit Time', '???? ????', 'Close Time'],
+  close: ['Close', 'Close Price', '???? ????', 'Exit Price', 'Exit', 'Close Price (USDT)'],
+  sl: ['SL', 'Stop Loss', '?? ???', 'Stop', 'Stop Price', 'Stop Loss Price', 'SL Price', 'Stop-Loss'],
+  tp: ['TP', 'Take Profit', '?? ???', 'TP Price', 'Take Profit Price', 'Take-Profit'],
   leverage: ['Lev', 'Leverage', '????'],
-  fee: ['Fee', '??????'],
+  fee: ['Fee', '??????', 'Commission', 'Trading Fee'],
   strategy: ['Strategy', '????????'],
   emotion: ['Emotion', '?????'],
-  notes: ['Notes', '???????']
+  notes: ['Notes', '???????', 'Comment', 'Comments']
 };
+
+const HEADER_KEY_CACHE = new WeakMap();
+
+function normalizeHeaderKey(key) {
+  return String(key ?? '')
+    .trim()
+    .toLowerCase()
+    .replace(/\u200c/g, '')
+    .replace(/[()]/g, '')
+    .replace(/[\s\-_]+/g, '')
+    .replace(/[^a-z0-9\u0600-\u06ff]+/g, '');
+}
+
+function mapRowKeys(row) {
+  if (!row || typeof row !== 'object') return {};
+  const cached = HEADER_KEY_CACHE.get(row);
+  if (cached) return cached;
+  const map = {};
+  Object.keys(row).forEach((rawKey) => {
+    const normalized = normalizeHeaderKey(rawKey);
+    if (!normalized) return;
+    const existing = map[normalized];
+    const value = row[rawKey];
+    if (existing === undefined || existing === '') {
+      map[normalized] = value;
+    }
+  });
+  HEADER_KEY_CACHE.set(row, map);
+  return map;
+}
 
 const EXPORT_HEADERS = {
   index: '#',
@@ -1795,8 +1825,18 @@ function exportXlsx() {
 }
 
 function resolveColumn(row, keys) {
+  if (!row || !Array.isArray(keys)) return '';
+  const normalizedMap = mapRowKeys(row);
   for (const key of keys) {
+    const normalizedKey = normalizeHeaderKey(key);
+    if (!normalizedKey) continue;
+    if (Object.prototype.hasOwnProperty.call(normalizedMap, normalizedKey)) {
+      const value = normalizedMap[normalizedKey];
+      if (value !== undefined && value !== '') return value;
+      if (value === 0) return value;
+    }
     if (row[key] !== undefined && row[key] !== '') return row[key];
+    if (row[key] === 0) return row[key];
   }
   return '';
 }
@@ -2155,5 +2195,3 @@ window.addEventListener('DOMContentLoaded', async () => {
     if (++count > 12) clearInterval(poll);
   }, 500);
 })();
-
-
