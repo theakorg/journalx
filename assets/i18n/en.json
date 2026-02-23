@@ -1,0 +1,493 @@
+{
+    "meta": {
+        "languageName": "English",
+        "languageNativeName": "English",
+        "title": "JournalX",
+        "appTitle": "JournalX",
+        "direction": "ltr",
+        "numberLocale": "en-US"
+    },
+    "theme": {
+        "dark": "Dark Mode",
+        "light": "Light Mode"
+    },
+    "language": {
+        "label": "Language",
+        "options": {
+            "en": "English",
+            "fa": "Persian"
+        }
+    },
+    "nav": {
+        "journal": "Journal",
+        "stats": "Insights",
+        "settings": "Settings"
+    },
+    "form": {
+        "title": "Trade Entry Form",
+        "fields": {
+            "symbol": {
+                "label": "Symbol",
+                "placeholder": "e.g. BTC/USDT",
+                "placeholderForex": "e.g. EUR/USD"
+            },
+            "exchange": {
+                "label": "Exchange",
+                "placeholder": "e.g. Binance / Bybit",
+                "placeholderForex": "e.g. IC Markets / Pepperstone"
+            },
+            "marketType": {
+                "label": "Market Type",
+                "options": {
+                    "spot": "Spot",
+                    "futures": "Futures",
+                    "forex": "Forex"
+                }
+            },
+            "side": {
+                "label": "Side",
+                "options": {
+                    "long": "Long",
+                    "short": "Short"
+                }
+            },
+            "timeframe": {
+                "label": "Time Frame",
+                "placeholder": "e.g. 15m / 1h / 4h",
+                "placeholderForex": "e.g. M15 / H1 / H4"
+            },
+            "orderType": {
+                "label": "Order Type",
+                "options": {
+                    "limit": "Limit",
+                    "market": "Market",
+                    "stop": "Stop"
+                }
+            },
+            "volume": {
+                "label": "Size (Qty)",
+                "placeholder": "e.g. 0.02",
+                "labelForex": "Lot Size",
+                "placeholderForex": "e.g. 0.10"
+            },
+            "entry": {
+                "label": "Entry Price",
+                "placeholder": "e.g. 60000"
+            },
+            "close": {
+                "label": "Exit Price",
+                "placeholder": "e.g. 61200"
+            },
+            "entryDate": {
+                "label": "Entry Date",
+                "placeholder": "YYYY-MM-DD"
+            },
+            "entryTime": {
+                "label": "Entry Time",
+                "placeholder": "HH:MM"
+            },
+            "exitDate": {
+                "label": "Exit Date",
+                "placeholder": "YYYY-MM-DD"
+            },
+            "exitTime": {
+                "label": "Exit Time",
+                "placeholder": "HH:MM"
+            },
+            "sl": {
+                "label": "Stop Loss (SL)",
+                "placeholder": "Stop Loss"
+            },
+            "tp": {
+                "label": "Take Profit (TP)",
+                "placeholder": "Take Profit"
+            },
+            "leverage": {
+                "label": "Leverage",
+                "placeholder": "e.g. 10"
+            },
+            "fee": {
+                "label": "Trading Fee (USDT)",
+                "placeholder": "2.5",
+                "labelForex": "Total Costs (Commission / Swap)",
+                "placeholderForex": "e.g. 3.2"
+            },
+            "strategy": {
+                "label": "Strategy",
+                "placeholder": "HLS"
+            },
+            "emotion": {
+                "label": "Emotion",
+                "placeholder": "Mood While Trading"
+            },
+            "notes": {
+                "label": "Notes",
+                "placeholder": "Short Comment About The Trade"
+            }
+        },
+        "actions": {
+            "submit": "Save Trade",
+            "update": "Update Trade",
+            "reset": "Clear Form",
+            "cancel": "Cancel Edit"
+        }
+    },
+    "filters": {
+        "market": {
+            "label": "Market",
+            "options": {
+                "all": "All markets"
+            }
+        },
+        "exchange": {
+            "label": "Exchange",
+            "options": {
+                "all": "All exchanges"
+            }
+        },
+        "search": {
+            "label": "Search",
+            "placeholder": "Search trades ..."
+        }
+    },
+    "metrics": {
+      "totalTrades": {
+        "label": "Total Trades"
+      },
+      "winRate": {
+        "label": "Win Rate"
+      },
+    "netPnl": {
+      "label": "Net PNL"
+    },
+    "netPnlForex": {
+      "label": "Net PNL (Money)"
+    },
+    "netPips": {
+      "label": "Total Pips"
+    }
+  },
+    "insights": {
+        "summary": {
+            "title": "Performance Snapshot",
+            "wins": "Winning Trades",
+            "losses": "Losing Trades",
+        "avgNet": "Avg PNL / Trade",
+        "avgPct": "Avg PNL",
+        "avgPips": "Avg Pips",
+        "bestTrade": "Best Trade",
+            "worstTrade": "Worst Trade",
+            "profitFactor": "Profit Factor",
+            "avgHold": "Avg Hold",
+            "totalVolume": "Total Volume"
+        },
+        "breakdown": {
+        "title": "Breakdowns",
+        "market": "By Market",
+        "pair": "By Pair",
+        "side": "By Side",
+        "exchange": "Top Exchanges"
+        },
+        "overTime": {
+            "title": "PNL Over Time",
+            "empty": "Add a few more trades to see the curve."
+        },
+        "monthly": {
+            "title": "Monthly Performance",
+            "headers": {
+                "period": "Period",
+                "trades": "Trades",
+                "net": "Net PNL",
+                "winRate": "Win Rate"
+            }
+        },
+        "common": {
+            "noData": "You haven\u0027t recorded enough trades yet.",
+            "trades": "Trades",
+            "net": "Net",
+            "winRate": "Win Rate",
+            "avgPnl": "Avg PNL",
+            "unknown": "Unknown"
+        }
+    },
+    "actions": {
+        "addSamples": "Add Sample Trades",
+        "importExcel": "Import Data",
+        "exportExcel": "Export Data",
+        "clearAll": "Clear All"
+    },
+    "table": {
+        "headers": {
+            "index": "#",
+            "symbol": "Symbol",
+            "exchange": "Exchange",
+            "market": "Market",
+            "side": "Side",
+            "entry": "Entry Price",
+            "entryDate": "Entry Date",
+            "entryTime": "Entry Time",
+            "close": "Exit Price",
+            "exitDate": "Exit Date",
+            "exitTime": "Exit Time",
+            "slTp": "SL / TP",
+            "leverage": "Lev",
+            "volume": "Size",
+            "volumeForex": "Lot",
+            "fee": "Fee",
+            "feeForex": "Costs",
+            "pnl": "PNL (USDT)",
+            "pnlMoney": "PNL (Money)",
+            "pnlPct": "PNL %",
+            "pnlPips": "Pips",
+            "timeframe": "TF",
+            "strategy": "Strategy",
+            "emotion": "Emotion",
+            "notes": "Notes",
+            "actions": "Actions",
+            "details": "Details"
+        },
+        "actions": {
+            "edit": "Edit",
+            "delete": "Delete"
+        }
+    },
+    "pagination": {
+        "info": "Page {current} of {total}",
+        "prev": "Previous",
+        "next": "Next",
+        "label": "Show",
+        "suffix": "per page"
+    },
+    "footer": {
+        "note": ""
+    },
+    "settings": {
+        "mode": {
+            "label": "Mode",
+            "options": {
+                "crypto": "Crypto",
+                "forex": "Forex"
+            }
+        },
+        "pnlDisplay": {
+            "label": "PNL Display",
+            "options": {
+                "net": "USDT",
+                "pct": "Percent",
+                "netForex": "Money",
+                "pips": "Pips"
+            }
+        },
+        "digits": {
+            "label": "Digit Style",
+            "options": {
+                "en": "English Digits",
+                "fa": "Persian Digits"
+            }
+        },
+        "telegram": {
+            "label": "Telegram Link",
+            "buttonConnect": "Connect",
+            "buttonConnected": "Connected",
+            "status": {
+                "disconnected": "Not connected yet",
+                "connected": "Saved user ID: {id}"
+            }
+        },
+        "deviceWarning": {
+            "title": "JournalX Isn\u0027t Supported On This Device",
+            "description": "JournalX is currently stable on desktop only. Mobile and tablet support is coming soon.",
+            "action": "Okay"
+        },
+        "update": {
+            "button": "JournalX Update"
+        },
+        "contact": {
+            "label": "Something Went Wrong?",
+            "button": "Tell Me Right Now ..."
+        }
+    },
+    "placeholders": {
+        "stats": "Insights are coming soon ...",
+        "settings": "Settings"
+    },
+    "status": {
+        "ready": "Ready ...",
+        "tradeSaved": "Trade saved successfully ...",
+        "tradeUpdated": "Trade updated ...",
+        "tradeDeleted": "Trade removed ...",
+        "demoAdded": "Sample trades added ...",
+        "formCleared": "Form cleared ...",
+        "editCanceled": "Edit canceled ...",
+        "xlsxExported": "Excel export downloaded ...",
+        "excelImported": "Excel file loaded ...",
+        "allCleared": "All trades cleared ...",
+        "contactSent": "Message sent successfully ...",
+        "telegramExported": "Export sent to Telegram ...",
+        "telegramConnected": "Telegram connected successfully ...",
+        "telegramUserUpdated": "Telegram user ID updated ...",
+        "telegramDetailsSent": "Trade details sent to Telegram ..."
+        ,"telegramExportMeta": "JournalX export | {mode} | {count} trades | {time}"
+    },
+    "confirm": {
+        "clearAll": "Are you sure you want to remove all saved trades?"
+    },
+    "errors": {
+        "dateLength": "Dates must be exactly 10 characters.",
+        "contactFailed": "We couldn\u0027t send your message right now. Please try again shortly.",
+        "telegramExportFailed": "We couldn\u0027t send the file via Telegram. Please try again.",
+        "telegramUserIdRequired": "Enter your Telegram user ID to continue.",
+        "telegramDetailsFailed": "We couldn\u0027t send the trade details. Please try again."
+    },
+    "demo": {
+        "trades": [
+            {
+                "strategy": "Trend Follower",
+                "emotion": "Calm",
+                "notes": "Sample trade following an uptrend breakout"
+            },
+            {
+                "strategy": "EMA200 Rejection",
+                "emotion": "Alert",
+                "notes": "Use this to test moving-average rejection setups"
+            },
+            {
+                "strategy": "Fake Breakout",
+                "emotion": "Excited",
+                "notes": "Note for testing false breakout reactions"
+            }
+        ]
+    },
+    "common": {
+        "cancel": "Cancel",
+        "save": "Save",
+        "delete": "Delete",
+        "clearAll": "Clear All"
+    },
+    "modals": {
+        "detailsTitle": "Trade Details",
+        "strategy": "Strategy",
+        "emotion": "Emotion",
+        "notes": "Notes",
+        "empty": "No additional notes for this trade ...",
+        "openLabel": "View Trade Notes",
+        "details": {
+            "title": "Trade Overview",
+            "sectionEntryExit": "Entry \u0026 Exit",
+            "sectionStats": "Performance",
+            "sectionExtra": "Additional",
+            "sendTelegram": "Send Trade Details To Telegram",
+            "fields": {
+                "symbol": "Symbol",
+                "exchange": "Exchange",
+                "market": "Market",
+                "side": "Side",
+                "timeframe": "Timeframe",
+                "orderType": "Order Type",
+                "volume": "Size",
+                "volumeForex": "Lot Size",
+                "leverage": "Leverage",
+                "entryPrice": "Entry Price",
+                "entryDate": "Entry Date",
+                "entryTime": "Entry Time",
+                "closePrice": "Exit Price",
+                "exitDate": "Exit Date",
+                "exitTime": "Exit Time",
+                "sl": "Stop Loss",
+                "tp": "Take Profit",
+                "fee": "Total Fee",
+                "pnlNet": "Net PNL",
+                "pnlPct": "PNL %",
+                "pnlPips": "Pips",
+                "strategy": "Strategy",
+                "emotion": "Emotion",
+                "notes": "Notes"
+            },
+            "emptyMessage": "Trade details"
+        },
+        "fee": {
+            "title": "Split Trading Fees",
+            "description": "Track entry and exit fees separately. Leave a field blank if it doesn\u0027t apply.",
+            "entryLabel": "Entry Fee",
+            "exitLabel": "Exit Fee",
+            "entryPlaceholder": "0",
+            "exitPlaceholder": "0",
+            "fundingLabel": "Funding Fee",
+            "entryLabelForex": "Commission (Open)",
+            "exitLabelForex": "Commission (Close)",
+            "fundingLabelForex": "Swap (Overnight)",
+            "fundingPlaceholder": "0",
+            "totalLabel": "Total Fee"
+        },
+        "delete": {
+            "title": "Delete Trade",
+            "description": "Don\u0027t forget that this will delete your trade permanently."
+        },
+        "clear": {
+            "title": "Clear All Trades",
+            "description": "Don\u0027t Forget That This Will Delete Every Saved Trade"
+        },
+        "export": {
+          "title": "Receive Information",
+          "description": "Where Would You Like Your Transaction File Sent ...",
+          "system": "Receive On System",
+          "telegram": "Send To Telegram",
+          "hint": "",
+          "hintMissingId": "",
+          "hintOffline": "You Need To Be Online To Send To Telegram ...",
+          "hintReady": "Okay, Done",
+          "hintSending": "Sending File To Telegram"
+        },
+        "mode": {
+            "title": "Choose Your Mode",
+            "description": "Select What You Trade Most You Can Switch Later In Settings",
+            "crypto": "Crypto",
+            "forex": "Forex"
+        },
+        "contact": {
+            "title": "Contact",
+            "description": "Got a problem or idea? Drop it here and we\u0027ll fix it fast ...",
+            "placeholder": "Type it here and leave the rest to us ...",
+            "send": "Send"
+        },
+        "telegram": {
+            "title": "Connect To Telegram",
+            "steps": {
+                "one": "Start Bot",
+                "two": "Enter User ID",
+                "three": "Connect"
+            },
+        "step1": {
+          "description": "Open Your Telegram And Go To JournalXBot, Then Start It ...",
+          "openBot": "Open Bot",
+          "done": "Started"
+        },
+        "step2": {
+          "description": "Now Enter Your Account ID Here ...",
+          "placeholder": "85759669248",
+          "save": "Connect"
+        },
+        "step3": {
+          "title": "Your Journal Is Connected To Telegram !",
+          "description": "Now You Can Easily Have All The Details Of Your Transactions Or Your Entire Journal In Telegram ...",
+          "done": "Close"
+        }
+        },
+        "deviceWarning": {
+            "title": "JournalX Isn\u0027t Stable On Mobile Yet",
+            "description": "You\u0027re Using A Mobile Or Tablet Device. Please Switch To The Desktop Version For The Best Experience",
+            "action": "Understood"
+        },
+        "update": {
+            "title": "JournalX Update",
+            "description": "Don’t Forget To Backup All Your Transaction Data Before Updating. To Do This, Just Tap On 'Get Data', Because If You Don’t, You Might Lose Everything. So Please Be Very Careful",
+            "confirm": "Okay, Update It"
+        }
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,477 @@
+{
+  "meta": {
+    "languageName": "Persian",
+    "languageNativeName": "فارسی",
+    "title": "ژورنال ایکس",
+    "appTitle": "ژورنال ایکس",
+    "direction": "rtl",
+    "numberLocale": "fa-IR"
+  },
+  "theme": {
+    "dark": "حالت تیره",
+    "light": "حالت روشن"
+  },
+  "language": {
+    "label": "زبان",
+    "options": {
+      "en": "انگلیسی",
+      "fa": "فارسی"
+    },
+    "digits": {
+      "label": "ساختار اعداد",
+      "options": {
+        "en": "اعداد انگلیسی",
+        "fa": "اعداد فارسی"
+      }
+    }
+  },
+  "nav": {
+    "journal": "ژورنال",
+    "stats": "اینسایت",
+    "settings": "تنظیمات"
+  },
+  "form": {
+    "title": "فرم معاملات",
+    "fields": {
+      "symbol": {
+        "label": "نماد",
+        "placeholder": "BTC/USDT",
+        "placeholderForex": "مثلا EUR/USD"
+      },
+      "exchange": {
+        "label": "صرافی",
+        "placeholder": "Binance",
+        "placeholderForex": "مثلا IC Markets / Pepperstone"
+      },
+      "marketType": {
+        "label": "نوع بازار",
+        "options": {
+          "spot": "اسپات",
+          "futures": "فیوچرز",
+          "forex": "فارکس"
+        }
+      },
+      "side": {
+        "label": "سمت معامله",
+        "options": {
+          "long": "لانگ",
+          "short": "شورت"
+        }
+      },
+      "timeframe": {
+        "label": "بازه زمانی",
+        "placeholder": "15m / 1h / 4h",
+        "placeholderForex": "مثلا M15 / H1 / H4"
+      },
+      "orderType": {
+        "label": "نوع سفارش",
+        "options": {
+          "limit": "لیمیت",
+          "market": "مارکت",
+          "stop": "استاپ"
+        }
+      },
+      "volume": {
+        "label": "حجم",
+        "placeholder": "0.02",
+        "labelForex": "لات",
+        "placeholderForex": "0.10"
+      },
+      "entry": {
+        "label": "قیمت ورود",
+        "placeholder": "60000"
+      },
+      "entryDate": {
+        "label": "تاریخ ورود",
+        "placeholder": "YYYY/MM/DD"
+      },
+      "entryTime": {
+        "label": "زمان ورود",
+        "placeholder": "HH:MM:SS"
+      },
+      "close": {
+        "label": "قیمت خروج",
+        "placeholder": "61200"
+      },
+      "exitDate": {
+        "label": "تاریخ خروج",
+        "placeholder": "YYYY/MM/DD"
+      },
+      "exitTime": {
+        "label": "زمان خروج",
+        "placeholder": "HH:MM:SS"
+      },
+      "sl": {
+        "label": "حد ضرر (SL)",
+        "placeholder": "حد ضرر"
+      },
+      "tp": {
+        "label": "حد سود (TP)",
+        "placeholder": "حد سود"
+      },
+      "leverage": {
+        "label": "اهرم",
+        "placeholder": "10x"
+      },
+      "fee": {
+        "label": "کارمزد",
+        "placeholder": "2.5",
+        "labelForex": "هزینه های کلی (کمیسیون / سواپ)",
+        "placeholderForex": "3.2"
+      },
+      "strategy": {
+        "label": "استراتژی",
+        "placeholder": "اچ ال اس"
+      },
+      "emotion": {
+        "label": "احساس",
+        "placeholder": "حال و احساس هنگام معامله"
+      },
+      "notes": {
+        "label": "یادداشت",
+        "placeholder": "یادداشت کوتاه درباره معامله"
+      }
+    },
+    "actions": {
+      "submit": "ثبت معامله",
+      "update": "ویرایش معامله",
+      "reset": "پاک کردن فرم",
+      "cancel": "لغو تغییرات"
+    }
+  },
+  "filters": {
+    "market": {
+      "label": "بازار: همه",
+      "options": {
+        "all": "بازار: همه",
+        "spot": "اسپات",
+        "futures": "فیوچرز"
+      }
+    },
+    "exchange": {
+      "label": "صرافی: همه",
+      "options": {
+        "all": "صرافی: همه"
+      }
+    },
+    "search": {
+      "placeholder": "جستجو ..."
+    }
+  },
+  "metrics": {
+    "totalTrades": {
+      "label": "تعداد معاملات"
+    },
+    "winRate": {
+      "label": "وین ریت"
+    },
+    "netPnl": {
+      "label": "پی ان ال خالص"
+    },
+    "netPnlForex": {
+      "label": "سود/ضرر پولی"
+    },
+    "netPips": {
+      "label": "جمع پیپ"
+    }
+  },
+  "actions": {
+    "addSamples": "افزودن معاملات نمونه",
+    "importExcel": "تزریق اطلاعات",
+    "exportExcel": "دریافت اطلاعات",
+    "clearAll": "حذف همه"
+  },
+  "table": {
+    "headers": {
+      "index": "#",
+      "symbol": "نماد",
+      "exchange": "صرافی",
+      "market": "بازار",
+      "side": "سمت",
+      "entry": "قیمت ورود",
+      "entryDate": "تاریخ ورود",
+      "entryTime": "زمان ورود",
+      "close": "قیمت خروج",
+      "exitDate": "تاریخ خروج",
+      "exitTime": "زمان خروج",
+      "slTp": "حد ضرر / سود",
+      "leverage": "اهرم",
+      "volume": "حجم",
+      "fee": "کارمزد",
+      "pnl": "PNL",
+      "pnlPct": "PNL %",
+      "timeframe": "بازه",
+      "strategy": "استراتژی",
+      "emotion": "احساس",
+      "notes": "یادداشت",
+      "actions": "عملیات",
+      "details": "جزئیات",
+      "pnlPips": "پیپ",
+      "volumeForex": "لات",
+      "feeForex": "هزینه",
+      "pnlMoney": "سود/ضرر پولی"
+    },
+    "actions": {
+      "edit": "ویرایش",
+      "delete": "حذف"
+    }
+  },
+  "pagination": {
+    "info": "صفحه {current} از {total}",
+    "prev": "قبلی",
+    "next": "بعدی",
+    "label": "نمایش",
+    "suffix": "مورد در هر صفحه"
+  },
+  "footer": {
+    "note": ""
+  },
+  "settings": {
+    "pnlDisplay": {
+      "label": "نمایش پی ان ال",
+      "options": {
+        "net": "دلار",
+        "pct": "درصد",
+        "netForex": "پولی",
+        "pips": "پیپ"
+      }
+    },
+    "digits": {
+      "label": "ساختار اعداد",
+      "options": {
+        "en": "اعداد انگلیسی",
+        "fa": "اعداد فارسی"
+      }
+    },
+    "telegram": {
+      "label": "اتصال به تلگرام",
+      "buttonConnect": "اتصال",
+      "buttonConnected": "متصل",
+      "status": {
+        "disconnected": "هنوز متصل نشده‌ای",
+        "connected": "شناسه ذخیره‌شده: {id}"
+      }
+    },
+    "contact": {
+      "label": "مشکلی پیش اومده؟",
+      "button": "همین الان اونو بهم بگو ..."
+    },
+    "mode": {
+      "label": "حالت",
+      "options": {
+        "crypto": "کریپتو",
+        "forex": "فارکس"
+      }
+    }
+  },
+  "insights": {
+    "summary": {
+      "title": "خلاصه عملکرد",
+      "wins": "معاملات سودده",
+      "losses": "معاملات ضررده",
+      "avgNet": "میانگین سود هر معامله",
+      "avgPct": "میانگین درصد سود",
+      "bestTrade": "بهترین سود در یک معامله",
+      "worstTrade": "بدترین ضرر در یک معامله",
+      "profitFactor": "نسبت سود به ضرر",
+      "avgHold": "میانگین زمان هولد",
+      "totalVolume": "حجم کل معاملات",
+      "avgPips": "میانگین پیپ"
+    },
+    "breakdown": {
+      "title": "تفکیک ها",
+      "market": "بر اساس بازار",
+      "side": "بر اساس جهت معامله",
+      "exchange": "بر اساس صرافی ها",
+      "pair": "بر اساس جفت ارز"
+    },
+    "overTime": {
+      "title": "پی ان ال در گذر زمان",
+      "empty": "برای گفتن و دیدن گذر زمانت باید منو همراه خودت کنی از اینجا به بعد چون الان چیزی ازت نمیدونم که ..."
+    },
+    "monthly": {
+      "title": "عملکرد ماهانه",
+      "headers": {
+        "period": "دوره",
+        "trades": "تعداد معاملات",
+        "net": "پی ان ال خالص",
+        "winRate": "وین ریت"
+      }
+    },
+    "common": {
+      "noData": "چیزی ثبت نکردی و منم چیزی ندارم که بگم خب ...",
+      "trades": "معاملات",
+      "net": "خالص",
+      "winRate": "وین ریت",
+      "avgPnl": "میانگین پی ان ال",
+      "unknown": "نامشخص"
+    }
+  },
+  "placeholders": {
+    "stats": "بخش اینسایت بزودی اضافه میشه ...",
+    "settings": "تنظیمات"
+  },
+  "status": {
+    "ready": "برخط ...",
+    "tradeSaved": "معامله ثبت شد ...",
+    "tradeUpdated": "معامله به روزرسانی شد ...",
+    "tradeDeleted": "معامله حذف شد ...",
+    "demoAdded": "سه معامله نمونه اضافه شد ...",
+    "formCleared": "فرم پاک شد ...",
+    "editCanceled": "ویرایش لغو شد ...",
+    "xlsxExported": "خروجی اکسل دانلود شد ...",
+    "excelImported": "فایل اکسل بارگذاری شد ...",
+    "allCleared": "تمام معاملات حذف شد ...",
+    "contactSent": "پیامت با موفقیت ارسال شد ...",
+    "telegramExported": "فایل با موفقیت در تلگرام ارسال شد ...",
+    "telegramConnected": "اتصال تلگرام با موفقیت انجام شد ...",
+    "telegramUserUpdated": "شناسه تلگرام با موفقیت تغییر کرد ...",
+    "telegramDetailsSent": "جزئیات معامله به تلگرام ارسال شد ...",
+    "telegramExportMeta": "خروجی ژورنال ایکس | {mode} | {count} معامله | {time}"
+  },
+  "confirm": {
+    "clearAll": "آیا از حذف همه معاملات مطمئن هستید؟"
+  },
+  "errors": {
+    "dateLength": "تاریخ باید دقیقاً ۱۰ کاراکتر باشد",
+    "contactFailed": "ارسال انجام نشد ...",
+    "telegramExportFailed": "ارسال اطلاعات به تلگرام انجام نشد ...",
+    "telegramUserIdRequired": "شناسه حسابتو بزن خب ...",
+    "telegramDetailsFailed": "ارسال جزئیات معامله انجام نشد ..."
+  },
+  "demo": {
+    "trades": [
+      {
+        "strategy": "Breakout - شکست سطوح",
+        "emotion": "هیجانی",
+        "notes": "ورود بعد از شکست مقاومت کلیدی و تأیید حجم"
+      },
+      {
+        "strategy": "Pullback - برگشت به حمایت",
+        "emotion": "خسته",
+        "notes": "ورود بعد از ریتست سطح شکسته شده"
+      },
+      {
+        "strategy": "EMA Crossover - تقاطع میانگین‌ها",
+        "emotion": "مطمئن",
+        "notes": "خرید وقتی EMA50 از EMA200 عبور می‌کند"
+      }
+    ]
+  },
+  "modals": {
+    "detailsTitle": "جزئیات معامله",
+    "strategy": "استراتژی",
+    "emotion": "احساس",
+    "notes": "یادداشت",
+    "empty": "اطلاعات تکمیلی برای این معامله ثبت نشده است",
+    "openLabel": "نمایش جزئیات معامله",
+    "fee": {
+      "title": "کارمزد معامله",
+      "description": "کارمزد ورود و خروجت از معامله رو اینجا جدا از هم وارد کن",
+      "entryLabel": "کارمزد ورود",
+      "exitLabel": "کارمزد خروج",
+      "entryPlaceholder": "0",
+      "exitPlaceholder": "0",
+      "fundingLabel": "کارمزد فاندینگ",
+      "fundingPlaceholder": "0",
+      "totalLabel": "جمع کارمزد",
+      "entryLabelForex": "کمیسیون (ورود)",
+      "exitLabelForex": "کمیسیون (خروج)",
+      "fundingLabelForex": "سواپ (شبانه)"
+    },
+    "delete": {
+      "title": "حذف معامله",
+      "description": "فراموش نکن که این کار باعث میشه معاملت حذف بشه"
+    },
+    "clear": {
+      "title": "حذف همه معاملات",
+      "description": "فراموش نکن که این کار باعث میشه همه معاملاتت حذف بشه"
+    },
+    "export": {
+      "title": "دریافت اطلاعات",
+      "description": "دوست داری فایل معاملاتت کجا برات ارسال بشه ...",
+      "system": "دریافت تو سیستم",
+      "telegram": "ارسال به تلگرام",
+      "hint": "",
+      "hintMissingId": "",
+      "hintOffline": "برای ارسال به تلگرام باید آنلاین شی ...",
+      "hintReady": "اوکی شد",
+      "hintSending": "در حال ارسال فایل به تلگرام"
+    },
+    "contact": {
+      "title": "کانکت",
+      "description": "مشکل، انتقاد یا پیشنهادی که داری رو بنویس تا خیلی زود اوکیش کنیم ...",
+      "placeholder": "اینجا بنویس و بقیشو بسپار به ما ...",
+      "send": "ارسال"
+    },
+    "telegram": {
+      "title": "اتصال به تلگرام",
+      "steps": {
+        "one": "استارت ربات",
+        "two": "وارد کردن شناسه",
+        "three": "اتصال"
+      },
+      "step1": {
+        "description": "تلگرامتو باز کن و وارد ربات JournalXBot شو و استارتش کن ...",
+        "openBot": "باز کردن ربات",
+        "done": "استارت زدم"
+      },
+      "step2": {
+        "description": "حالا شناسه حسابتو اینجا بزن ...",
+        "placeholder": "85759669248",
+        "save": "اتصال"
+      },
+      "step3": {
+        "title": "ژورنالت به تلگرام کانکت شد !",
+        "description": "حالا میتونی خیلی راحت جزئیات هر معاملتو یا کل اطلاعات ژورنالتو توی تلگرامت داشته باشی ...",
+        "done": "بستن"
+      }
+    },
+    "details": {
+      "title": "نمای کلی معامله",
+      "sectionEntryExit": "ورود و خروج",
+      "sectionStats": "آمار عملکرد",
+      "sectionExtra": "موارد دیگر",
+      "sendTelegram": "ارسال جزئیات معامله به تلگرام",
+      "fields": {
+        "symbol": "نماد",
+        "exchange": "صرافی",
+        "market": "بازار",
+        "side": "سمت",
+        "timeframe": "بازه زمانی",
+        "orderType": "نوع سفارش",
+        "volume": "حجم",
+        "leverage": "اهرم",
+        "entryPrice": "قیمت ورود",
+        "entryDate": "تاریخ ورود",
+        "entryTime": "زمان ورود",
+        "closePrice": "قیمت خروج",
+        "exitDate": "تاریخ خروج",
+        "exitTime": "زمان خروج",
+        "sl": "حد ضرر",
+        "tp": "حد سود",
+        "fee": "کل کارمزد",
+        "pnlNet": "پی‌اند‌ال خالص",
+        "pnlPct": "پی‌اند‌ال درصدی",
+        "strategy": "استراتژی",
+        "emotion": "احساس",
+        "notes": "یادداشت",
+        "pnlPips": "پیپ",
+        "volumeForex": "لات"
+      },
+      "emptyMessage": "جزئیات معامله"
+    },
+    "mode": {
+      "title": "انتخاب حالت",
+      "description": "بازاری که بیشتر با آن کار می‌کنید را انتخاب کنید. بعدا از تنظیمات قابل تغییر است.",
+      "crypto": "کریپتو",
+      "forex": "فارکس"
+    }
+  },
+  "common": {
+    "cancel": "انصراف",
+    "save": "ذخیره",
+    "delete": "حذف",
+    "clearAll": "حذف"
+  }
+}
